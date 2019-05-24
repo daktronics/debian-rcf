@@ -23,7 +23,7 @@ RCF_CONFIG_FLAGS += RCF_BUILD_DLL
 #RCF_CONFIG_FLAGS += RCF_AUTO_INIT_DEINIT
 
 override_dh_auto_build:
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(RCF_CONFIG_FLAGS:%=-D%) -std=c++11 -g -fPIC -DPIC -c src/RCF/RCF.cpp -o src/RCF/RCF.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(RCF_CONFIG_FLAGS:%=-D%) -std=c++11 -g -fPIC -DPIC -Iinclude/ -c src/RCF/RCF.cpp -o src/RCF/RCF.o
 	$(CXX) $(LDFLAGS) -shared -Wl,-soname,librcf2.so.2 src/RCF/RCF.o -lpthread -ldl -o librcf2.so.2.0.1
 	ln -f -s librcf2.so.2.0.1  librcf2.so.2
 	ln -f -s librcf2.so.2  librcf2.so
