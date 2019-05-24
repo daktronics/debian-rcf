@@ -114,7 +114,7 @@
         RcfClient(                                                          \
             ::RCF::ServerBindingPtr         serverStubPtr,                  \
             DerefPtrT                       derefPtr,                       \
-            boost::mpl::true_ *             ) :                             \
+            RCF::TrueType *) :                                              \
                 I_RcfClient(                                                \
                     ::RCF::getInterfaceName( (InterfaceT *) NULL),          \
                     serverStubPtr)                                          \

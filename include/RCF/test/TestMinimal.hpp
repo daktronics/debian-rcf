@@ -117,14 +117,21 @@ int main(int argc, char **argv)
 
     bool shouldNotCatch = false;
 
+#ifndef NDEBUG
+    unsigned int defaultTimeLimit = 0;
+#else
+    unsigned int defaultTimeLimit = 5 * 60;
+#endif
+
     {
         RCF::CommandLineOption<std::string>    clTestCase( "testcase",     "",     "Run a specific test case.");
         RCF::CommandLineOption<bool>           clListTests("list",         false,  "List all test cases.");
         RCF::CommandLineOption<bool>           clAssert(   "assert",       false,  "Enable assert popups, and assert on test failures.");
         RCF::CommandLineOption<int>            clLogLevel( "loglevel",     1,      "Set RCF log level.");
         RCF::CommandLineOption<std::string>    clLogFormat("logformat",    "",     "Set RCF log format.");
+        RCF::CommandLineOption<std::string>    clLogFile("logfile",        "", "Set RCF log file.");
         RCF::CommandLineOption<bool>           clNoCatch(  "nocatch",      false,  "Don't catch exceptions at top level.");
-        RCF::CommandLineOption<unsigned int>   clTimeLimit("timelimit",    5*60,   "Set program time limit in seconds. 0 to disable.");
+        RCF::CommandLineOption<unsigned int>   clTimeLimit("timelimit",     defaultTimeLimit, "Set program time limit in seconds. 0 to disable.");
 
 #ifdef _MSC_VER
         RCF::CommandLineOption<bool>           clMinidump("minidump",      true,   "Enable minidump creation.");
@@ -188,6 +195,13 @@ int main(int argc, char **argv)
         RCF::LoggerPtr loggerPtr(new RCF::Logger(logName, logLevel, RCF::LogToStdout(), logFormat) );
         loggerPtr->activate();
 #endif
+
+        std::string logFile = clLogFile.get();
+        if ( logFile.size() > 0 )
+        {
+            RCF::LoggerPtr loggerPtr(new RCF::Logger(logName, logLevel, RCF::LogToFile(logFile, true), logFormat));
+            loggerPtr->activate();
+        }
 
         // -minidump
 #if defined(_MSC_VER)

@@ -11,11 +11,11 @@ namespace RCF {
 
         mpParametersUntyped = mRcfSessionPtr->mpParameters;
 
-        AsioSessionState & sessionState =
-            dynamic_cast<AsioSessionState &>(
-            mRcfSessionPtr->getSessionState());
+        AsioNetworkSession & networkSession =
+            dynamic_cast<AsioNetworkSession &>(
+            mRcfSessionPtr->getNetworkSession());
 
-        mSessionStatePtr = sessionState.sharedFromThis();
+        mNetworkSessionPtr = networkSession.sharedFromThis();
     }
 
     void RemoteCallContextImpl::commit()
@@ -38,7 +38,7 @@ namespace RCF {
         mpParametersUntyped = NULL;
         mRcfSessionPtr.reset();
 
-        mSessionStatePtr.reset();
+        mNetworkSessionPtr.reset();
 
         mCommitted = true;
     }
@@ -63,7 +63,7 @@ namespace RCF {
         mpParametersUntyped = NULL;
         mRcfSessionPtr.reset();
 
-        mSessionStatePtr.reset();
+        mNetworkSessionPtr.reset();
 
         mCommitted = true;
     }
