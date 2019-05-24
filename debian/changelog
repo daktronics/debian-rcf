@@ -1,3 +1,14 @@
+rcf (2.0.1.101-2) unstable; urgency=medium
+
+  * Added a gbp.conf
+  * Update build commands to use CPPFLAGS, CXXFLAGS, and LDFLAGS.
+  * Specify RCF build configuration using more variables (and list all of the options, even the ones we don't use)
+  * Fix lintian warnings
+  * Add Build-Depends on libboost1.55-dev
+  * Fixed build commands so the include/ directory can be found when building w/ pbuilder.
+
+ -- Matt Sickler <matt.sickler@daktronics.com>  Fri, 24 May 2019 18:27:39 -0500
+
 rcf (2.0.1.101-1) unstable; urgency=low
 
   * Initial release
