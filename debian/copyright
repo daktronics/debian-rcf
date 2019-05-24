@@ -1,0 +1,36 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: rcf
+Source: http://www.deltavsoft.com/
+License: GPL-2 | Proprietary
+
+Files: *
+Copyright: 2006-2012 Delta V Software.
+License: GPL-2 | Proprietary
+ Copyright (C) 2006-2012 Delta V Software. All rights reserved.
+ .
+ RCF is distributed under a dual licensing model. For commercial licensing conditions, please see our website:
+ .
+ http://www.deltavsoft.com/RCF_License_Agreement.pdf
+ .
+ For open source applications, RCF is distributed under the GPL v2 license, with specific exceptions for OpenSSL. For more details, please see our website:
+ .
+ http://www.deltavsoft.com/RCF_Open_Source_License.txt
+
+Files: debian/*
+Copyright: 2019 Matt Sickler <matt.sickler@daktronics.com>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

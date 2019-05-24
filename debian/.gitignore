@@ -2,3 +2,5 @@ files
 *.debhelper.log
 *.substvars
 *.debhelper
+librcf2/
+librcf2-dev/
