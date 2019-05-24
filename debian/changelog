@@ -1,3 +1,10 @@
+rcf (2.2.0.0-1) unstable; urgency=medium
+
+  * Drop " | Proprietary" from copyright file.
+  * Imported Upstream version 2.2.0.0
+
+ -- Matt Sickler <matt.sickler@daktronics.com>  Fri, 24 May 2019 18:42:10 -0500
+
 rcf (2.0.1.101-2) unstable; urgency=medium
 
   * Added a gbp.conf
