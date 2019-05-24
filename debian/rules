@@ -6,10 +6,12 @@ include /usr/share/dpkg/default.mk
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ 
+	dh $@
+
+RCF_CONFIG_FLAGS := -DRCF_USE_OPENSSL -DRCF_USE_ZLIB -DRCF_USE_PROTOBUF -DRCF_USE_IPV6 -DRCF_BUILD_DLL
 
 override_dh_auto_build:
-	$(CXX) -std=c++11 -DRCF_USE_OPENSSL -DRCF_USE_ZLIB -DRCF_USE_PROTOBUF -DRCF_USE_IPV6 -DRCF_BUILD_DLL -g -fPIC -DPIC -c src/RCF/RCF.cpp -o src/RCF/RCF.o
-	$(CXX) -shared -Wl,-soname,librcf2.so.2 src/RCF/RCF.o -lpthread -ldl -o librcf2.so.2.0.1
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(RCF_CONFIG_FLAGS) -std=c++11 -g -fPIC -DPIC -c src/RCF/RCF.cpp -o src/RCF/RCF.o
+	$(CXX) $(LDFLAGS) -shared -Wl,-soname,librcf2.so.2 src/RCF/RCF.o -lpthread -ldl -o librcf2.so.2.0.1
 	ln -f -s librcf2.so.2.0.1  librcf2.so.2
 	ln -f -s librcf2.so.2  librcf2.so
