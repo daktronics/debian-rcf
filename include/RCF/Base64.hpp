@@ -16,21 +16,12 @@
 //
 //******************************************************************************
 
-#include <RCF/HttpsServerTransport.hpp>
+#ifndef INCLUDE_RCF_BASE64_HPP
+#define INCLUDE_RCF_BASE64_HPP
 
-#include <RCF/HttpsEndpoint.hpp>
+#include <string>
 
-namespace RCF {
+std::string base64_encode(unsigned char const*, unsigned int len);
+std::string base64_decode(std::string const& s);
 
-    HttpsServerTransport::HttpsServerTransport(const HttpsEndpoint & httpsEndpoint) : 
-        TcpServerTransport(httpsEndpoint.getIp(), httpsEndpoint.getPort())
-    {
-        mWireProtocol = Wp_Https;
-    }
-
-    TransportType HttpsServerTransport::getTransportType()
-    {
-        return Tt_Https;
-    }
-
-} // namespace RCF
+#endif // ! INCLUDE_RCF_BASE64_HPP

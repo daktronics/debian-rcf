@@ -190,7 +190,11 @@
 
 // JSON feature
 #ifndef RCF_FEATURE_JSON
+#ifdef RCF_USE_JSON
+#define RCF_FEATURE_JSON            1
+#else
 #define RCF_FEATURE_JSON            0
+#endif
 #endif
 
 // IPv6 feature

@@ -28,10 +28,10 @@ namespace RCF {
 
     class I_Parameters;
     class RcfSession;
-    class AsioSessionState;
+    class AsioNetworkSession;
 
     typedef boost::shared_ptr<RcfSession> RcfSessionPtr;
-    typedef boost::shared_ptr<AsioSessionState> AsioSessionStatePtr;
+    typedef boost::shared_ptr<AsioNetworkSession> AsioNetworkSessionPtr;
 
     class RCF_EXPORT RemoteCallContextImpl
     {
@@ -45,7 +45,7 @@ namespace RCF {
 
     private:
         RcfSessionPtr       mRcfSessionPtr;
-        AsioSessionStatePtr mSessionStatePtr;
+        AsioNetworkSessionPtr mNetworkSessionPtr;
         bool                mCommitted;
 
     protected:

@@ -49,7 +49,7 @@
 #include "ClientStub.cpp"
 #include "ClientStubLegacy.cpp"
 #include "ClientTransport.cpp"
-#include "ConnectionOrientedClientTransport.cpp"
+#include "ConnectedClientTransport.cpp"
 #include "CurrentSerializationProtocol.cpp"
 #include "CurrentSession.cpp"
 #include "CustomAllocator.cpp"
@@ -115,7 +115,7 @@
 #endif
 
 #if RCF_FEATURE_TCP==1
-#include "TcpAsioServerTransport.cpp"
+#include "TcpServerTransport.cpp"
 #include "TcpClientTransport.cpp"
 #include "TcpEndpoint.cpp"
 #endif
@@ -137,6 +137,8 @@
 #include "HttpsServerTransport.cpp"
 #include "HttpFrameFilter.cpp"
 #include "HttpConnectFilter.cpp"
+#include "HttpSessionFilter.cpp"
+#include "Base64.cpp"
 #endif
 
 
@@ -221,6 +223,10 @@ namespace RCF {
 
 #if RCF_FEATURE_JSON==1
 #include "JsonRpc.cpp"
+#endif
+
+#if RCF_FEATURE_LOCALSOCKET==1 || RCF_FEATURE_NAMEDPIPE==1
+#include "NamedPipeEndpoint.cpp"
 #endif
 
 #ifdef _MSC_VER
