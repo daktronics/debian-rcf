@@ -10,9 +10,13 @@ Package: librcf2-dev
 Section: libdevel
 Architecture: any
 Depends: librcf (= ${binary:Version}), ${misc:Depends}
-Description: Remote Call Framework (RCF) is a IPC/RPC framework tailored for C++ applications (development files)
+Description: IPC/RPC framework tailored for C++ applications (development files)
+ Remote Call Framework (RCF) is an IPC/RPC framework tailored for C++
+ applications
 
 Package: librcf2
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Remote Call Framework (RCF) is a IPC/RPC framework tailored for C++ applications
+Description: IPC/RPC framework tailored for C++ applications
+ Remote Call Framework (RCF) is an IPC/RPC framework tailored for C++
+ applications
