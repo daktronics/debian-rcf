@@ -9,7 +9,7 @@ Homepage: http://www.deltavsoft.com/
 Package: librcf2-dev
 Section: libdevel
 Architecture: any
-Depends: librcf (= ${binary:Version}), ${misc:Depends}
+Depends: librcf2 (= ${binary:Version}), ${misc:Depends}
 Description: IPC/RPC framework tailored for C++ applications (development files)
  Remote Call Framework (RCF) is an IPC/RPC framework tailored for C++
  applications
