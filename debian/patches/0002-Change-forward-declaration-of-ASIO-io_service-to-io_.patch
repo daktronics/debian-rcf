@@ -1,0 +1,21 @@
+From: Matt Sickler <Matt.Sickler@daktronics.com>
+Date: Tue, 28 May 2019 09:01:12 -0500
+Subject: Change forward declaration of ASIO 'io_service to 'io_context
+
+---
+ include/RCF/ThreadPool.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/RCF/ThreadPool.hpp b/include/RCF/ThreadPool.hpp
+index 4ef9f02..5d011af 100755
+--- a/include/RCF/ThreadPool.hpp
++++ b/include/RCF/ThreadPool.hpp
+@@ -35,7 +35,7 @@
+ 
+ namespace boost {
+     namespace asio {
+-        class io_service;
++        class io_context;
+     }
+ }
+ 

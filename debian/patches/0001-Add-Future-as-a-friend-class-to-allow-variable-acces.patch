@@ -1,0 +1,21 @@
+From: Matt Sickler <Matt.Sickler@daktronics.com>
+Date: Tue, 28 May 2019 09:00:26 -0500
+Subject: Add Future as-a friend class to allow variable access
+
+---
+ include/RCF/ClientStub.hpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/include/RCF/ClientStub.hpp b/include/RCF/ClientStub.hpp
+index 9882cf4..8465625 100755
+--- a/include/RCF/ClientStub.hpp
++++ b/include/RCF/ClientStub.hpp
+@@ -372,6 +372,8 @@ namespace RCF {
+ 
+     private:
+ 
++        template<typename U>
++        friend class Future;
+         friend class FutureImplBase;
+ 
+         template<
