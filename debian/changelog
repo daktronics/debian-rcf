@@ -1,3 +1,9 @@
+rcf (2.2.0.0-3) unstable; urgency=medium
+
+  * Change Build-Depends for Boost to be libboost-dev instead of a specific version.
+
+ -- Matt Sickler <matt.sickler@daktronics.com>  Tue, 28 May 2019 13:07:50 -0500
+
 rcf (2.2.0.0-2) unstable; urgency=medium
 
   * Fix Depends typo.
