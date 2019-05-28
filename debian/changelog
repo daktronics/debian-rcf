@@ -1,3 +1,9 @@
+rcf (2.2.0.0-2) unstable; urgency=medium
+
+  * Fix Depends typo.
+
+ -- Matt Sickler <matt.sickler@daktronics.com>  Tue, 28 May 2019 11:19:20 -0500
+
 rcf (2.2.0.0-1) unstable; urgency=medium
 
   * Drop " | Proprietary" from copyright file.
