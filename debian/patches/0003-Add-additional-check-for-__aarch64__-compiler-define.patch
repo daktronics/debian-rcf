@@ -1,0 +1,26 @@
+From: Jonathan DeNoon <dakeng>
+Date: Mon, 16 Dec 2019 15:20:43 -0600
+Subject: Add additional check for __aarch64__ compiler define when deciding
+ byte ordering
+
+---
+ src/RCF/ByteOrdering.cpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/RCF/ByteOrdering.cpp b/src/RCF/ByteOrdering.cpp
+index d6f1aa1..146035d 100755
+--- a/src/RCF/ByteOrdering.cpp
++++ b/src/RCF/ByteOrdering.cpp
+@@ -68,8 +68,11 @@ namespace RCF {
+ 
+     const ByteOrder MachineByteOrder = LittleEndian;
+ 
+-#else
++#elif defined(__aarch64__)
++
++    const ByteOrder MachineByteOrder = LittleEndian;
+ 
++#else
+     // If you get an error here, uncomment the appropriate line.
+     //const ByteOrder MachineByteOrder = BigEndian;
+     //const ByteOrder MachineByteOrder = LittleEndian;

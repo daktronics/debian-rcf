@@ -1,2 +1,3 @@
 0001-Add-Future-as-a-friend-class-to-allow-variable-acces.patch
 0002-Change-forward-declaration-of-ASIO-io_service-to-io_.patch
+0003-Add-additional-check-for-__aarch64__-compiler-define.patch
