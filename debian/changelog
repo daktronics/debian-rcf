@@ -1,3 +1,11 @@
+rcf (2.2.0.0-4) unstable; urgency=medium
+
+  * Add patch changing ASIO forward declarations
+  * Add patch fixing a compiler error only seen with newer compilers
+  * Add patch for amd64 endianness detection
+
+ -- Matt Sickler <msickler@CPE-BLD-03.daktronics.lan>  Mon, 06 Apr 2020 15:03:35 -0500
+
 rcf (2.2.0.0-3) unstable; urgency=medium
 
   * Change Build-Depends for Boost to be libboost-dev instead of a specific version.
